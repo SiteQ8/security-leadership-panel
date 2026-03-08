@@ -1,0 +1,15 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate HTML
+        run: python3 -c "from html.parser import HTMLParser; p=HTMLParser(); p.feed(open('docs/index.html').read()); print('HTML OK')"
+      - name: Check file size
+        run: ls -lh docs/index.html

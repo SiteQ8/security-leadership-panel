@@ -3,21 +3,45 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security Leadership Control Panel</title>
+    <title>Security Leadership Control Panel v2.0</title>
+    <meta name="description" content="CISO-grade cybersecurity governance dashboard — NIST CSF 2.0 + CIS Controls v8 aligned">
+    <meta name="author" content="Ali AlEnezi (@SiteQ8)">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
             --color-primary: #1a708e;
             --color-primary-hover: #156579;
             --color-primary-active: #0d4d5f;
-            --color-success: #32b8c6;
-            --color-warning: #e6815f;
-            --color-error: #c0152f;
-            --color-bg: #f5f5f5;
+            --color-success: #10b981;
+            --color-warning: #f59e0b;
+            --color-error: #ef4444;
+            --color-bg: #f5f7fa;
             --color-surface: #ffffff;
-            --color-text: #1f2121;
-            --color-text-secondary: #626c7c;
-            --color-border: #e0e0e0;
+            --color-text: #1f2937;
+            --color-text-secondary: #6b7280;
+            --color-border: #e5e7eb;
         }
+        html[data-theme="dark"] {
+            --color-bg: #0b1120;
+            --color-surface: #151f32;
+            --color-text: #e5e7eb;
+            --color-text-secondary: #9ca3af;
+            --color-border: #1e2d3d;
+        }
+        html[data-theme="dark"] header { background: #0f1829; border-color: #1e2d3d; }
+        html[data-theme="dark"] .tabs { background: #0f1829; border-color: #1e2d3d; }
+        html[data-theme="dark"] .tab-btn { color: #9ca3af; }
+        html[data-theme="dark"] .tab-btn:hover { background: rgba(255,255,255,0.04); }
+        html[data-theme="dark"] .card { background: #151f32; border-color: #1e2d3d; }
+        html[data-theme="dark"] table th { background: #1a2538; }
+        html[data-theme="dark"] table td { border-color: #1e2d3d; }
+        html[data-theme="dark"] .alert { border-color: #1e2d3d; }
+        html[data-theme="dark"] .alert-warning { background: #78350f22; border-color: #92400e; }
+        html[data-theme="dark"] .alert-success { background: #06532622; border-color: #065f46; }
+        html[data-theme="dark"] select, html[data-theme="dark"] input, html[data-theme="dark"] textarea { background: #0b1120; color: #e5e7eb; border-color: #1e2d3d; }
+        html[data-theme="dark"] .framework-item { border-color: #1e2d3d; }
+        html[data-theme="dark"] .progress-bar { background: #1e2d3d; }
 
         * {
             margin: 0;
@@ -394,13 +418,65 @@
             border-left: 4px solid var(--color-success);
             color: var(--color-success);
         }
+
+
+        html[data-theme="dark"] { --color-bg:#0b1120; --color-surface:#151f32; --color-text:#e5e7eb; --color-text-secondary:#9ca3af; --color-border:#1e2d3d; }
+        html[data-theme="dark"] header { background:#0f1829; border-color:#1e2d3d; }
+        html[data-theme="dark"] .tabs { background:#0f1829; border-color:#1e2d3d; }
+        html[data-theme="dark"] .tab-btn { color:#9ca3af; }
+        html[data-theme="dark"] table th { background:#1a2538; }
+        html[data-theme="dark"] table td { border-color:#1e2d3d; }
+        html[data-theme="dark"] .alert { border-color:#1e2d3d; }
+        html[data-theme="dark"] select,html[data-theme="dark"] input,html[data-theme="dark"] textarea { background:#0b1120; color:#e5e7eb; border-color:#1e2d3d; }
+        html[data-theme="dark"] .framework-item { border-color:#1e2d3d; }
+        html[data-theme="dark"] .progress-bar { background:#1e2d3d; }
+        /* v2.0 */
+        .header-row { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+        .header-actions { display:flex; align-items:center; gap:0.6rem; }
+        .btn-icon { background:none; border:1px solid var(--color-border); border-radius:6px; padding:5px 10px; cursor:pointer; font-size:16px; color:var(--color-text); transition:all 0.2s; }
+        .btn-icon:hover { border-color:var(--color-primary); }
+        .btn-gh { display:inline-flex; align-items:center; gap:5px; padding:5px 12px; border-radius:6px; border:1px solid var(--color-border); background:none; cursor:pointer; font-size:12px; font-weight:500; color:var(--color-text); text-decoration:none; transition:all 0.2s; }
+        .btn-gh:hover { border-color:var(--color-primary); color:var(--color-primary); }
+        .btn-gh svg { width:15px; height:15px; fill:currentColor; }
+        .header-meta { display:flex; gap:1.2rem; align-items:center; margin-top:4px; font-size:11px; color:var(--color-text-secondary); }
+        .badge-v2 { display:inline-block; padding:2px 8px; border-radius:100px; font-size:10px; font-weight:700; background:rgba(16,185,129,0.12); color:#10b981; }
+        .chart-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:30px; }
+        .chart-card { background:var(--color-surface); border:1px solid var(--color-border); border-radius:8px; padding:20px; }
+        .chart-card h3 { font-size:14px; font-weight:600; margin-bottom:10px; color:var(--color-text); }
+        @media (max-width:768px) { .chart-grid { grid-template-columns:1fr; } }
+        .table-search { width:100%; padding:10px 14px; border:1px solid var(--color-border); border-radius:6px; font-size:14px; margin-bottom:14px; background:var(--color-surface); color:var(--color-text); }
+        .table-search:focus { outline:none; border-color:var(--color-primary); }
+        .export-row { display:flex; justify-content:flex-end; gap:0.5rem; margin-bottom:10px; }
+        .btn-sm { padding:5px 12px; font-size:12px; border-radius:6px; border:1px solid var(--color-border); background:var(--color-surface); cursor:pointer; color:var(--color-text); transition:all 0.2s; }
+        .btn-sm:hover { border-color:var(--color-primary); color:var(--color-primary); }
+        .toast { position:fixed; bottom:1.5rem; right:1.5rem; padding:12px 20px; border-radius:8px; font-size:14px; font-weight:500; color:#fff; z-index:10000; box-shadow:0 8px 24px rgba(0,0,0,0.2); animation:slideIn .35s ease-out,slideOut .35s ease-in 2.65s forwards; }
+        .toast-success { background:#059669; } .toast-info { background:#3b82f6; }
+        @keyframes slideIn { from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)} }
+        @keyframes slideOut { from{opacity:1}to{opacity:0;transform:translateY(20px)} }
+        .card { transition:box-shadow 0.2s; } .card:hover { box-shadow:0 4px 12px rgba(0,0,0,0.06); }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>ð¡ï¸ Security Leadership Control Panel</h1>
-            <p>Global cybersecurity governance dashboard | NIST CSF + CIS Controls Aligned</p>
+            <div class="header-row">
+                <div>
+                    <h1>🛡️ Security Leadership Control Panel</h1>
+                    <div class="header-meta">
+                        <span>NIST CSF 2.0 + CIS Controls v8</span>
+                        <span class="badge-v2">v2.0</span>
+                        <span id="header-clock"></span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-sm" id="export-metrics-csv">📥 Export CSV</button>
+                    <button class="btn-icon" id="theme-toggle" title="Toggle Dark Mode">🌙</button>
+                    <a href="https://github.com/SiteQ8/security-leadership-panel" target="_blank" class="btn-gh">
+                        <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
         </header>
 
         <div class="tabs">
@@ -497,6 +573,19 @@
                     </div>
                     <div class="metric-label">All under investigation</div>
                     <span class="status status-warning">In Progress</span>
+                </div>
+            </div>
+
+            <section>
+                <h2><!-- v2.0 Charts -->
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <h3>🎯 NIST CSF Compliance Radar</h3>
+                    <canvas id="compliance-radar"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>📊 Risk Distribution</h3>
+                    <canvas id="risk-doughnut"></canvas>
                 </div>
             </div>
 
@@ -680,6 +769,7 @@
 
         <!-- Metrics & KPIs Tab -->
         <div id="metrics" class="tab-content">
+            <div class="export-row"><button class="btn-sm" id="export-metrics-btn">📥 Export Metrics CSV</button></div>
             <section>
                 <h2>Board-Level KPIs (Executive Metrics)</h2>
                 <div class="grid grid-3">
@@ -810,6 +900,7 @@
         <div id="incidents" class="tab-content">
             <section>
                 <h2>Active Incident Tracking</h2>
+                <input type="text" class="table-search" id="incident-search" placeholder="🔍 Search incidents...">
                 <div class="alert alert-success">
                     <span>â</span>
                     <div><strong>Good News:</strong> No critical incidents in last 30 days. Average resolution time improved 15% YoY.</div>
@@ -904,6 +995,7 @@
         <div id="vendors" class="tab-content">
             <section>
                 <h2>Third-Party &amp; Vendor Risk Management</h2>
+                <input type="text" class="table-search" id="vendor-search" placeholder="🔍 Search vendors...">
                 <div class="alert alert-warning">
                     <span>â ï¸</span>
                     <div><strong>Action Required:</strong> 4 vendors have pending security assessments due by Jan 31, 2026.</div>
