@@ -1,4 +1,4 @@
-# 🛡️ Security Leadership Control Panel
+# Security Leadership Control Panel
 
 A professional, globally-applicable cybersecurity governance dashboard for CISOs, security leaders, and governance teams. Built with **NIST CSF 2.0** as the primary framework and aligned with **CIS Controls v8**.
 
