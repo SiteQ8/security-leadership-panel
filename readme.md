@@ -113,11 +113,18 @@ A professional, globally-applicable cybersecurity governance dashboard for CISOs
 ```
 security-leadership-panel/
 ├── docs/
-│   └── index.html          # Main application (GitHub Pages)
-├── README.md               # This file
-├── LICENSE                 # MIT License
-├── CONTRIBUTING.md         # Contribution guidelines
-└── CHANGELOG.md            # Version history
+│   └── index.html           # Main application (GitHub Pages)
+├── .github/
+│   ├── ISSUE_TEMPLATE/      # Bug report + feature request
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   ├── workflows/ci.yml     # GitHub Actions CI
+│   └── FUNDING.yml
+├── README.md                # This file
+├── LICENSE                  # MIT License
+├── SECURITY.md              # Security policy
+├── CONTRIBUTING.md          # Contribution guidelines
+├── CHANGELOG.md             # Version history
+└── .gitignore
 ```
 
 ### Design Features
@@ -229,14 +236,26 @@ Contributions are welcome! Please see `CONTRIBUTING.md` for guidelines on:
 
 ## 🎯 Roadmap
 
-- [ ] Dark mode theme toggle
-- [ ] Data export to PDF/CSV
-- [ ] API integration templates
-- [ ] M365 Defender queries
-- [ ] Prometheus/Grafana integration
-- [ ] Multi-language support
-- [ ] Advanced charting
-- [ ] Custom dashboard builder
+### ✅ Version 2.0 (Current)
+- [x] Dark mode theme toggle with persistence
+- [x] Chart.js: NIST CSF compliance radar chart
+- [x] Chart.js: Risk distribution doughnut chart
+- [x] Data export to CSV (metrics)
+- [x] Search/filter on incidents and vendor tables
+- [x] Toast notification system
+- [x] Live clock + v2.0 badge in header
+- [x] GitHub link in header
+- [x] Community files (LICENSE, SECURITY, CONTRIBUTING, CHANGELOG)
+- [x] GitHub Actions CI + issue/PR templates
+
+### 🚧 Version 2.5
+- [ ] API integration templates (M365 Defender, Splunk)
+- [ ] Prometheus/Grafana dashboard export
+- [ ] Multi-language support (Arabic RTL)
+- [ ] Custom dashboard builder (drag & drop)
+- [ ] PDF report generation
+- [ ] Trend line charts (month-over-month)
+- [ ] Role-based views (CISO vs analyst)
 
 ---
 
@@ -258,8 +277,9 @@ Contributions are welcome! Please see `CONTRIBUTING.md` for guidelines on:
 
 ## 👤 Author
 
-**Security Leadership Team**  
-GitHub: [@SiteQ8](https://github.com/SiteQ8)
+**Ali AlEnezi**  
+GitHub: [@SiteQ8](https://github.com/SiteQ8)  
+Email: Site@hotmail.com
 
 ---
 
@@ -273,6 +293,6 @@ If you find this tool useful, please consider:
 
 ---
 
-**Last Updated:** January 2026  
-**Version:** 1.0.0  
+**Last Updated:** March 2026  
+**Version:** 2.0.0  
 **Status:** Production Ready ✅
