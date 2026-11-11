@@ -6,16 +6,16 @@ A professional, globally-applicable cybersecurity governance dashboard for CISOs
 
 ---
 
-## 📋 Features
+## Features
 
 ### 6 Integrated Modules
 
-1. **📊 Dashboard** - Executive risk summary, KPIs, board-ready metrics
-2. **📋 Frameworks** - NIST CSF (5 Functions) + CIS Controls mapping
-3. **📈 Metrics & KPIs** - Board-level and operational metrics
-4. **🚨 Incidents** - Active incident tracking and logging
-5. **🤝 Vendor Risk** - Third-party risk management and assessments
-6. **📅 Planning** - Strategic roadmap and maturity tracking
+1. **Dashboard** - Executive risk summary, KPIs, board-ready metrics
+2. **Frameworks** - NIST CSF (5 Functions) + CIS Controls mapping
+3. **Metrics & KPIs** - Board-level and operational metrics
+4. **Incidents** - Active incident tracking and logging
+5. **Vendor Risk** - Third-party risk management and assessments
+6. **Planning** - Strategic roadmap and maturity tracking
 
 ### Key Capabilities
 
@@ -32,7 +32,7 @@ A professional, globally-applicable cybersecurity governance dashboard for CISOs
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Option 1: Use GitHub Pages (Recommended)
 1. Clone this repository: `git clone https://github.com/SiteQ8/security-leadership-panel.git`
@@ -52,7 +52,7 @@ A professional, globally-applicable cybersecurity governance dashboard for CISOs
 
 ---
 
-## 📊 Framework Coverage
+## Framework Coverage
 
 ### NIST CSF 2.0 Functions
 
@@ -73,7 +73,7 @@ A professional, globally-applicable cybersecurity governance dashboard for CISOs
 
 ---
 
-## 🎯 Use Cases
+## Use Cases
 
 ### For CISOs
 - Track compliance against global frameworks
@@ -101,7 +101,7 @@ A professional, globally-applicable cybersecurity governance dashboard for CISOs
 
 ---
 
-## 💻 Technical Details
+## Technical Details
 
 ### Technology Stack
 - **Frontend:** HTML5, CSS3, Vanilla JavaScript (ES6+)
@@ -136,7 +136,7 @@ security-leadership-panel/
 
 ---
 
-## 📈 Dashboard Metrics Explained
+## Dashboard Metrics Explained
 
 ### Executive Metrics
 - **Overall Risk Score:** 0-10 scale (10 = critical)
@@ -161,7 +161,7 @@ security-leadership-panel/
 
 ---
 
-## 🔧 Customization
+## Customization
 
 ### Edit the Dashboard
 1. Open `docs/index.html` in any text editor
@@ -184,7 +184,7 @@ The code is well-commented and modular. You can:
 
 ---
 
-## 📱 Mobile Responsiveness
+## Mobile Responsiveness
 
 The dashboard is fully responsive:
 - **Desktop:** Full 1400px width with 3-column grids
@@ -194,7 +194,7 @@ The dashboard is fully responsive:
 
 ---
 
-## 🔐 Security & Privacy
+## Security & Privacy
 
 - ✅ **No External Dependencies:** Reduces attack surface
 - ✅ **Client-Side Only:** Data stays on your device
@@ -204,7 +204,7 @@ The dashboard is fully responsive:
 
 ---
 
-## 📝 License
+## License
 
 This project is licensed under the **MIT License** - see `LICENSE` file for details.
 
@@ -216,7 +216,7 @@ You are free to:
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please see `CONTRIBUTING.md` for guidelines on:
 - Reporting issues
@@ -226,7 +226,7 @@ Contributions are welcome! Please see `CONTRIBUTING.md` for guidelines on:
 
 ---
 
-## 📞 Support & Feedback
+## Support & Feedback
 
 - **GitHub Issues:** Report bugs or request features
 - **Discussions:** Join community discussions
@@ -234,9 +234,9 @@ Contributions are welcome! Please see `CONTRIBUTING.md` for guidelines on:
 
 ---
 
-## 🎯 Roadmap
+## Roadmap
 
-### ✅ Version 2.0 (Current)
+### Version 2.0 (Current)
 - [x] Dark mode theme toggle with persistence
 - [x] Chart.js: NIST CSF compliance radar chart
 - [x] Chart.js: Risk distribution doughnut chart
@@ -248,7 +248,7 @@ Contributions are welcome! Please see `CONTRIBUTING.md` for guidelines on:
 - [x] Community files (LICENSE, SECURITY, CONTRIBUTING, CHANGELOG)
 - [x] GitHub Actions CI + issue/PR templates
 
-### 🚧 Version 2.5
+### Version 2.5
 - [ ] API integration templates (M365 Defender, Splunk)
 - [ ] Prometheus/Grafana dashboard export
 - [ ] Multi-language support (Arabic RTL)
@@ -259,7 +259,7 @@ Contributions are welcome! Please see `CONTRIBUTING.md` for guidelines on:
 
 ---
 
-## 📚 Resources
+## Resources
 
 ### NIST CSF 2.0
 - [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
@@ -275,21 +275,11 @@ Contributions are welcome! Please see `CONTRIBUTING.md` for guidelines on:
 
 ---
 
-## 👤 Author
+## Author
 
 **Ali AlEnezi**  
 GitHub: [@SiteQ8](https://github.com/SiteQ8)  
 Email: Site@hotmail.com
-
----
-
-## ⭐ Show Your Support
-
-If you find this tool useful, please consider:
-- ⭐ Starring this repository
-- 📢 Sharing with your security team
-- 💬 Providing feedback and suggestions
-- 🔄 Contributing improvements
 
 ---
 
